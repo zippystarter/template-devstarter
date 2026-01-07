@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Github, Linkedin, Mail, ExternalLink, Code2, Terminal, Database, Cpu, ArrowRight } from "lucide-react";
+import {Container} from "@/components/zippystarter/container";
 
 export default function Home() {
 
@@ -65,8 +66,7 @@ export default function Home() {
       <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary selection:text-primary-foreground overflow-x-hidden">
 
         {/* Navigation / Header */}
-        <header className="fixed top-0 left-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border">
-          <div className="container mx-auto flex items-center justify-between h-16 uppercase">
+        <Container component="header" wrapperClassName="fixed top-0 left-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border" className="mx-auto max-w-7xl flex items-center justify-between h-16 uppercase">
             <div className="text-xl font-bold font-mono tracking-tighter">
               Marcus<span className="text-primary">_</span>Chen
             </div>
@@ -79,11 +79,10 @@ export default function Home() {
             <Button variant="outline" className="font-mono text-xs border-primary/50 hover:bg-primary/10 hover:text-primary hover:border-primary">
               resume_v4.pdf
             </Button>
-          </div>
-        </header>
+        </Container>
 
         {/* Hero Section */}
-        <section className="relative min-h-screen flex items-center pt-16 overflow-hidden">
+        <Container wrapperClassName="relative min-h-screen flex items-center pt-16 overflow-hidden" className="mx-auto max-w-7xl flex-1">
           {/* Background Image with Overlay */}
           <div className="absolute inset-0 z-0">
             <img
@@ -165,7 +164,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section>
+        </Container>
 
         {/* Projects Section */}
         <section id="projects" className="py-24 border-t border-border">
