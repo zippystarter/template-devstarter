@@ -141,7 +141,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/50 to-background"></div>
         </div>
 
-        <div className="container mx-auto relative z-10 grid md:grid-cols-2 gap-12 items-center">
+        <div className="relative z-10 grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/30 bg-primary/5 text-primary text-xs font-mono">
               <span className="relative flex h-2 w-2">
