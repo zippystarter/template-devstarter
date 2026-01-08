@@ -133,10 +133,10 @@ export default function Home() {
       >
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
-          <div className="diagonal-lines-container">
-            <div className="diagonal-lines-bg" />
+          <div className="relative w-[100vw] h-[100vh] bg-background overflow-hidden">
+            <div className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-[url('/hero-bg.jpg')] before:absolute before:inset-0 before:bg-primary before:mix-blend-color" />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/50 to-background"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/50 to-background" />
         </div>
 
         <div className="relative z-10 grid md:grid-cols-2 gap-12 items-center">
@@ -261,11 +261,11 @@ export default function Home() {
               key={index}
               className="pt-0 group bg-card border-border hover:border-primary/50 transition-all duration-300 rounded-none overflow-hidden"
             >
-              <div className="relative aspect-square overflow-hidden border-b border-border">
+              <div className="image-container relative aspect-square overflow-hidden border-b border-border">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500 grayscale"
                 />
                 <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>

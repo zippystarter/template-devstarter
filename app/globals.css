@@ -104,29 +104,12 @@
     padding-right: var(--safe-area-right);
 }
 
-@layer utility {
-    .diagonal-lines-container {
-        position: relative;
-        width: 100vw;
-        height: 100vh;
-        background: #000;
-        overflow: hidden;
-    }
+.image-container {
+    position: relative;
+    background: var(--primary);
 
-    .diagonal-lines-bg {
-        position: absolute;
-        inset: 0;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-image: url("/public/hero-bg.jpg");
-    }
-
-    .diagonal-lines-bg::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: var(--primary, oklch(0.88 0.2 120));
-        mix-blend-mode: color;
+    & img {
+        mix-blend-mode: darken;
     }
 }
+
