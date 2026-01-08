@@ -105,100 +105,7 @@
 }
 
 @layer utility {
-
     .diagonal-lines-container {
-        /* Side lines colors - using color-mix with transparency */
-        --line-side-dim-1: color-mix(in oklch, var(--primary) 15%, transparent);
-        --line-side-dim-2: color-mix(in oklch, var(--primary) 25%, transparent);
-        --line-side-bright: color-mix(in oklch, var(--primary) 30%, transparent);
-        --line-side-glow: color-mix(in oklch, var(--primary) 20%, transparent);
-
-        /* Main back line colors */
-        --line-main-back-dim: color-mix(in oklch, var(--primary) 50%, transparent);
-        --line-main-back-bright: color-mix(in oklch, var(--primary) 65%, transparent);
-        --line-main-back-glow: color-mix(in oklch, var(--primary) 40%, transparent);
-
-        /* Main front line colors */
-        --line-main-front-dim: color-mix(in oklch, var(--primary) 70%, transparent);
-        --line-main-front-bright: var(--primary);
-        --line-main-front-glow: color-mix(in oklch, var(--primary) 60%, transparent);
-
-        position: relative;
-        width: 100vw;
-        height: 100vh;
-        background: #000;
-        overflow: hidden;
-    }
-
-    .diagonal-line {
-        position: absolute;
-        width: 1px;
-        height: 150%;
-        top: 50%;
-        left: 50%;
-        transform-origin: center;
-    }
-
-    .line-left {
-        transform: translate(-50%, -50%) rotate(-45deg);
-        background: linear-gradient(to bottom,
-        transparent 0%,
-        var(--line-side-dim-1) 25%,
-        var(--line-side-dim-2) 40%,
-        var(--line-side-bright) 50%,
-        var(--line-side-dim-2) 60%,
-        var(--line-side-dim-1) 75%,
-        transparent 100%
-        );
-        box-shadow: 0 0 4px var(--line-side-glow);
-        left: 15%;
-        z-index: 0;
-    }
-
-    .line-main-back {
-        transform: translate(-50%, -50%) rotate(-45deg);
-        background: linear-gradient(to bottom,
-        transparent 0%,
-        var(--line-main-back-dim) 25%,
-        var(--line-main-back-bright) 50%,
-        var(--line-main-back-dim) 75%,
-        transparent 100%
-        );
-        box-shadow: 0 0 8px var(--line-main-back-glow);
-        z-index: 1;
-    }
-
-    .line-main-front {
-        width: 2px;
-        transform: translate(-50%, -50%) rotate(50deg);
-        background: linear-gradient(to bottom,
-        transparent 0%,
-        var(--line-main-front-dim) 20%,
-        var(--line-main-front-bright) 50%,
-        var(--line-main-front-dim) 80%,
-        transparent 100%
-        );
-        box-shadow: 0 0 12px var(--line-main-front-glow);
-        z-index: 2;
-    }
-
-    .line-right {
-        transform: translate(-50%, -50%) rotate(45deg);
-        background: linear-gradient(to bottom,
-        transparent 0%,
-        var(--line-side-dim-1) 25%,
-        var(--line-side-dim-2) 40%,
-        var(--line-side-bright) 50%,
-        var(--line-side-dim-2) 60%,
-        var(--line-side-dim-1) 75%,
-        transparent 100%
-        );
-        box-shadow: 0 0 4px var(--line-side-glow);
-        left: 85%;
-        z-index: 0;
-    }
-
-    .diagonal-lines-container-2 {
         position: relative;
         width: 100vw;
         height: 100vh;
@@ -209,10 +116,10 @@
     .diagonal-lines-bg {
         position: absolute;
         inset: 0;
-        background-image: url('images/hero-bg.jpg'); /* Replace with your image path */
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
+        background-image: url("/public/hero-bg.jpg");
     }
 
     .diagonal-lines-bg::before {
@@ -220,6 +127,6 @@
         position: absolute;
         inset: 0;
         background: var(--primary, oklch(0.88 0.2 120));
-        mix-blend-mode: color; /* or try 'lighten', 'color', 'overlay' */
+        mix-blend-mode: color;
     }
 }
