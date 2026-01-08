@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from "react";
+import * as React from "react";
 import { cn } from "@/lib/utils";
 
 export function ContainerInner({
@@ -28,7 +28,7 @@ export function ContainerOuter({
   );
 }
 
-interface ContainerProps extends PropsWithChildren {
+interface ContainerProps extends React.ComponentPropsWithoutRef<"div"> {
   className?: string;
   component?: React.ElementType;
   wrapperClassName?: string;
@@ -36,12 +36,17 @@ interface ContainerProps extends PropsWithChildren {
 
 export function Container({
   className,
-  component,
+  component = "div",
   children,
   wrapperClassName,
+  ...props
 }: ContainerProps) {
   return (
-    <ContainerOuter component={component} className={wrapperClassName}>
+    <ContainerOuter
+      component={component}
+      className={wrapperClassName}
+      {...props}
+    >
       <ContainerInner className={cn(className, "px-safe")}>
         {children}
       </ContainerInner>
