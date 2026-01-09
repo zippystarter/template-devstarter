@@ -267,7 +267,7 @@ export default function Home() {
                   alt={project.title}
                   className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500 grayscale"
                 />
-                <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
               <CardHeader>
                 <CardTitle className="text-2xl font-bold tracking-tight group-hover:text-primary transition-colors">

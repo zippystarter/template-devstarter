@@ -55,6 +55,8 @@
 
 :root {
     --primary: oklch(0.88 0.2 120); /* Acid Green */
+    /* Vibrant lime green - calculated from primary with increased chroma and slight lightness boost */
+    --primary-vibrant: oklch(from var(--primary) calc(l + 0.02) calc(c * 3) h); /* Dynamic: boost lightness slightly, triple chroma */
     --primary-foreground: oklch(0.1 0.02 286); /* Dark Black */
     --sidebar-primary: oklch(0.2 0.02 286);
     --sidebar-primary-foreground: oklch(0.98 0 0);
@@ -106,10 +108,11 @@
 
 .image-container {
     position: relative;
-    background: var(--primary);
+    background: oklch(from var(--primary) calc(l + 0.02) calc(c * 1) h);
 
     & img {
         mix-blend-mode: darken;
+        scale: 1.01;
     }
 }
 
