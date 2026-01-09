@@ -55,8 +55,6 @@
 
 :root {
     --primary: oklch(0.88 0.2 120); /* Acid Green */
-    /* Vibrant lime green - calculated from primary with increased chroma and slight lightness boost */
-    --primary-vibrant: oklch(from var(--primary) calc(l + 0.02) calc(c * 3) h); /* Dynamic: boost lightness slightly, triple chroma */
     --primary-foreground: oklch(0.1 0.02 286); /* Dark Black */
     --sidebar-primary: oklch(0.2 0.02 286);
     --sidebar-primary-foreground: oklch(0.98 0 0);
@@ -65,7 +63,7 @@
     --chart-3: oklch(0.6 0.1 120);
     --chart-4: oklch(0.5 0.05 120);
     --chart-5: oklch(0.4 0.02 120);
-    --radius: 0rem; /* Sharp corners for Swiss style */
+    --radius: 0.5rem; /* Sharp corners for Swiss style */
     --background: oklch(0.1 0.01 286); /* Matte Black */
     --foreground: oklch(0.98 0 0); /* White */
     --card: oklch(0.12 0.01 286);
@@ -91,6 +89,12 @@
     --sidebar-ring: oklch(0.88 0.2 120);
 }
 
+@media (width >= theme("screens.lg")) {
+    :root {
+        --m: --spacing(8);
+    }
+}
+
 @layer base {
     * {
         @apply border-border outline-ring/50;
@@ -108,7 +112,7 @@
 
 .image-container {
     position: relative;
-    background: oklch(from var(--primary) calc(l + 0.02) calc(c * 1) h);
+    background: var(--primary);
 
     & img {
         mix-blend-mode: darken;

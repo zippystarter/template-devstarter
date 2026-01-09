@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -22,6 +22,8 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Container } from "@/components/zippystarter/container";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 export default function Home() {
   const projects = [
@@ -105,18 +107,24 @@ export default function Home() {
           Marcus<span className="text-primary">_</span>Chen
         </div>
         <nav className="hidden md:flex gap-8 text-sm font-medium text-muted-foreground ">
-          <a href="#projects" className="hover:text-primary transition-colors">
+          <Link
+            href="#projects"
+            className="hover:text-primary transition-colors"
+          >
             Projects
-          </a>
-          <a href="#skills" className="hover:text-primary transition-colors">
+          </Link>
+          <Link href="#skills" className="hover:text-primary transition-colors">
             Skills
-          </a>
-          <a href="#blog" className="hover:text-primary transition-colors">
+          </Link>
+          <Link href="#blog" className="hover:text-primary transition-colors">
             Logs
-          </a>
-          <a href="#contact" className="hover:text-primary transition-colors">
+          </Link>
+          <Link
+            href="#contact"
+            className="hover:text-primary transition-colors"
+          >
             Contact
-          </a>
+          </Link>
         </nav>
         <Button
           variant="outline"
@@ -157,40 +165,43 @@ export default function Home() {
                 DEV_
               </span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-md leading-relaxed">
+            <p className="md:text-xl text-muted-foreground max-w-md leading-relaxed">
               Architecting digital voids and crafting high-performance web
               experiences. Specialized in scalable distributed systems and
               interactive 3D interfaces.
             </p>
-            <div className="flex gap-4 pt-4">
-              <Button
-                size="lg"
-                className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold rounded-none"
+            <div className="flex gap-4 pt-4 items-center">
+              <Link
+                href="#projects"
+                className={cn("uppercase", buttonVariants({ size: "lg" }))}
               >
-                VIEW PROJECTS <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
+                View projects <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
               <div className="flex gap-2">
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="hover:text-primary hover:bg-primary/10"
+                <Link
+                  href="#"
+                  className={cn(
+                    buttonVariants({ variant: "ghost", size: "icon" })
+                  )}
                 >
                   <Github className="h-5 w-5" />
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="hover:text-primary hover:bg-primary/10"
+                </Link>
+                <Link
+                  href="#"
+                  className={cn(
+                    buttonVariants({ variant: "ghost", size: "icon" })
+                  )}
                 >
                   <Linkedin className="h-5 w-5" />
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="hover:text-primary hover:bg-primary/10"
+                </Link>
+                <Link
+                  href="#"
+                  className={cn(
+                    buttonVariants({ variant: "ghost", size: "icon" })
+                  )}
                 >
                   <Mail className="h-5 w-5" />
-                </Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -291,18 +302,18 @@ export default function Home() {
                 </CardDescription>
               </CardContent>
               <CardFooter className="flex justify-between pt-0">
-                <a
+                <Link
                   href={project.link}
                   className="text-sm font-bold flex items-center hover:text-primary transition-colors"
                 >
                   LIVE DEMO <ExternalLink className="ml-2 h-3 w-3" />
-                </a>
-                <a
+                </Link>
+                <Link
                   href={project.repo}
                   className="text-sm font-bold flex items-center hover:text-primary transition-colors"
                 >
                   CODE <Github className="ml-2 h-3 w-3" />
-                </a>
+                </Link>
               </CardFooter>
             </Card>
           ))}
@@ -479,15 +490,15 @@ export default function Home() {
               © 2025 MARCUS CHEN. ALL RIGHTS RESERVED.
             </div>
             <div className="flex gap-6 text-xs font-mono text-muted-foreground">
-              <a href="#" className="hover:text-primary transition-colors">
+              <Link href="#" className="hover:text-primary transition-colors">
                 GITHUB
-              </a>
-              <a href="#" className="hover:text-primary transition-colors">
+              </Link>
+              <Link href="#" className="hover:text-primary transition-colors">
                 LINKEDIN
-              </a>
-              <a href="#" className="hover:text-primary transition-colors">
+              </Link>
+              <Link href="#" className="hover:text-primary transition-colors">
                 TWITTER
-              </a>
+              </Link>
             </div>
           </div>
         </div>
