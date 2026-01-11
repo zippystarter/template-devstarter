@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ThemeProvider } from "@/components/providers/theme-provider";
 import { Space_Grotesk, JetBrains_Mono, Space_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeMessageListener } from "@zippy/shared-utils";
@@ -35,12 +36,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth shadcn dark">
+    <html lang="en" suppressHydrationWarning className="scroll-smooth shadcn">
       <body
         className={`font-body antialiased ${spaceGrotesk.variable} ${jetBrainsMono.variable}`}
       >
-        <ThemeMessageListener />
-        {children}
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <ThemeMessageListener />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
