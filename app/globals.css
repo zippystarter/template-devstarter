@@ -41,7 +41,6 @@
     --font-sans: "Space Grotesk", "Inter", sans-serif;
     --font-mono: "JetBrains Mono", monospace;
     --m: --spacing(4);
-    --g: --spacing(4);
     --safe-area-left: max(var(--m), env(safe-area-inset-left));
     --safe-area-right: max(var(--m), env(safe-area-inset-right));
 }

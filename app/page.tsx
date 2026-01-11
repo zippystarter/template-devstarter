@@ -251,7 +251,7 @@ export default function Home() {
         wrapperClassName="py-24 border-t border-border"
         className="mx-auto max-w-7xl flex-1"
       >
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+        <div className="grid justify-between items-end mb-16 gap-4">
           <div>
             <h2 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4">
               SELECTED
@@ -260,13 +260,13 @@ export default function Home() {
             </h2>
             <div className="h-1 w-24 bg-primary"></div>
           </div>
-          <p className="text-muted-foreground max-w-sm text-right md:text-left">
+          <p className="text-muted-foreground max-w-sm text-left">
             A collection of experiments, production apps, and open source
             contributions.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,250px),1fr))] gap-4 lg:gap-8">
           {projects.map((project, index) => (
             <Card
               key={index}
@@ -382,28 +382,28 @@ export default function Home() {
         </div>
       </Container>
       {/* Blog Section */}
-      <section id="blog" className="py-24 border-t border-border">
+      <Container id="blog" className="py-24 border-t border-border">
         <div className="container mx-auto">
-          <h2 className="text-4xl font-bold tracking-tighter mb-12 text-center">
-            TRANSMISSIONS
+          <h2 className="text-4xl font-bold tracking-tighter mb-12 lg:text-center uppercase">
+            Transmissions
           </h2>
 
-          <div className="space-y-8 max-w-4xl mx-auto">
+          <div className="space-y-8 max-w-7xl mx-auto">
             {blogPosts.map((post, index) => (
-              <div key={index} className="group cursor-pointer">
-                <div className="flex flex-col md:flex-row md:items-baseline justify-between mb-2">
-                  <h3 className="text-2xl font-bold group-hover:text-primary transition-colors">
+              <Link href="#" key={index} className="group">
+                <div className="grid gap-4 items-baseline justify-between mb-2">
+                  <h3 className="text-2xl font-bold group-hover:text-primary transition-colors text-balance">
                     {post.title}
                   </h3>
-                  <span className="font-mono text-xs text-muted-foreground whitespace-nowrap md:ml-4">
-                    {post.date} // {post.readTime}
+                  <span className="font-mono text-xs text-muted-foreground whitespace-nowrap">
+                    {post.date} / {post.readTime}
                   </span>
                 </div>
                 <p className="text-muted-foreground mb-4 max-w-2xl">
                   {post.excerpt}
                 </p>
                 <div className="h-[1px] w-full bg-border group-hover:bg-primary/50 transition-colors"></div>
-              </div>
+              </Link>
             ))}
           </div>
 
@@ -416,9 +416,9 @@ export default function Home() {
             </Button>
           </div>
         </div>
-      </section>
+      </Container>
       {/* Contact Section */}
-      <section id="contact" className="py-24 bg-card border-t border-border">
+      <Container id="contact" className="py-24 bg-card border-t border-border">
         <div className="container mx-auto max-w-2xl">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold tracking-tighter mb-4">
@@ -481,7 +481,7 @@ export default function Home() {
             </Button>
           </form>
         </div>
-      </section>
+      </Container>
       {/* Footer */}
       <footer className="py-8 border-t border-border bg-background text-center">
         <div className="container mx-auto">
