@@ -266,11 +266,11 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,250px),1fr))] gap-4 lg:gap-8">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,250px),1fr))] grid-rows-[repeat(3,auto)] gap-6">
           {projects.map((project, index) => (
             <Card
               key={index}
-              className="pt-0 group bg-card border-border hover:border-primary/50 transition-all duration-300 rounded-none overflow-hidden"
+              className="pt-0 group bg-card border-border hover:border-primary/50 transition-all duration-300 rounded-none overflow-hidden grid grid-rows-subgrid row-span-full content-start items-start"
             >
               <div className="image-container relative aspect-square overflow-hidden border-b border-border">
                 <img
@@ -280,27 +280,29 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
-              <CardHeader>
-                <CardTitle className="text-2xl font-bold tracking-tight group-hover:text-primary transition-colors">
-                  {project.title}
-                </CardTitle>
-                <div className="flex flex-wrap gap-2 mt-2">
-                  {project.tags.map((tag) => (
-                    <Badge
-                      key={tag}
-                      variant="secondary"
-                      className="rounded-none font-mono text-xs bg-secondary/50 text-secondary-foreground border-transparent"
-                    >
-                      {tag}
-                    </Badge>
-                  ))}
-                </div>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-base">
-                  {project.description}
-                </CardDescription>
-              </CardContent>
+              <div className="grid gap-4">
+                <CardHeader className="grid gap-4">
+                  <CardTitle className="text-2xl font-bold tracking-tight group-hover:text-primary transition-colors">
+                    {project.title}
+                  </CardTitle>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <Badge
+                        key={tag}
+                        variant="secondary"
+                        className="rounded-none font-mono text-xs bg-secondary/50 text-secondary-foreground border-transparent"
+                      >
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-base">
+                    {project.description}
+                  </CardDescription>
+                </CardContent>
+              </div>
               <CardFooter className="flex justify-between pt-0">
                 <Link
                   href={project.link}
