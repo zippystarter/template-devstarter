@@ -270,7 +270,7 @@ export default function Home() {
           {projects.map((project, index) => (
             <Card
               key={index}
-              className="pt-0 group bg-card border-border hover:border-primary/50 transition-all duration-300 rounded-none overflow-hidden grid grid-rows-subgrid row-span-full content-start items-start"
+              className="pt-0 group bg-card border-border hover:border-primary/50 transition-all duration-300 rounded-none overflow-hidden grid grid-rows-subgrid row-span-3 content-start items-start"
             >
               <div className="image-container relative aspect-square overflow-hidden border-b border-border">
                 <img
@@ -290,7 +290,7 @@ export default function Home() {
                       <Badge
                         key={tag}
                         variant="secondary"
-                        className="rounded-none font-mono text-xs bg-secondary/50 text-secondary-foreground border-transparent"
+                        className="font-mono text-xs"
                       >
                         {tag}
                       </Badge>
@@ -306,15 +306,15 @@ export default function Home() {
               <CardFooter className="flex justify-between pt-0">
                 <Link
                   href={project.link}
-                  className="text-sm font-bold flex items-center hover:text-primary transition-colors"
+                  className="text-xs font-bold flex items-center hover:text-primary transition-colors gap-2"
                 >
-                  LIVE DEMO <ExternalLink className="ml-2 h-3 w-3" />
+                  LIVE DEMO <ExternalLink className="size-3" />
                 </Link>
                 <Link
                   href={project.repo}
-                  className="text-sm font-bold flex items-center hover:text-primary transition-colors"
+                  className="text-xs font-bold flex items-center hover:text-primary transition-colors gap-2"
                 >
-                  CODE <Github className="ml-2 h-3 w-3" />
+                  CODE <Github className="size-3" />
                 </Link>
               </CardFooter>
             </Card>
