@@ -97,7 +97,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary selection:text-primary-foreground overflow-x-hidden">
+    <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground overflow-x-hidden">
       {/* Navigation / Header */}
       <Container
         component="header"
@@ -157,7 +157,7 @@ export default function Home() {
               </span>
               SYSTEM ONLINE // AVAILABLE FOR HIRE
             </div>
-            <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-[0.9]">
+            <h1 className="text-6xl md:text-8xl font-display tracking-tighter leading-[0.9]">
               FULL
               <br />
               STACK
@@ -176,7 +176,7 @@ export default function Home() {
                 href="#projects"
                 className={cn("uppercase", buttonVariants({ size: "lg" }))}
               >
-                View projects <ArrowRight className="ml-2 h-4 w-4" />
+                View projects <ArrowRight className="size-4" />
               </Link>
               <div className="flex gap-2">
                 <Link
@@ -254,7 +254,7 @@ export default function Home() {
       >
         <div className="grid justify-between items-end mb-16 gap-4">
           <div>
-            <h2 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4">
+            <h2 className="text-4xl md:text-6xl font-display tracking-tighter mb-4">
               SELECTED
               <br />
               WORKS
@@ -284,7 +284,7 @@ export default function Home() {
               </div>
               <div className="grid gap-4">
                 <CardHeader className="grid gap-4">
-                  <CardTitle className="text-2xl font-bold tracking-tight group-hover:text-primary transition-colors">
+                  <CardTitle className="text-2xl font-display group-hover:text-primary transition-colors">
                     {project.title}
                   </CardTitle>
                   <div className="flex flex-wrap gap-2">
@@ -308,13 +308,13 @@ export default function Home() {
               <CardFooter className="flex justify-between pt-0">
                 <Link
                   href={project.link}
-                  className="text-xs font-bold flex items-center hover:text-primary transition-colors gap-2"
+                  className="text-sm font-display flex items-center hover:text-primary transition-colors gap-2"
                 >
                   LIVE DEMO <ExternalLink className="size-3" />
                 </Link>
                 <Link
                   href={project.repo}
-                  className="text-xs font-bold flex items-center hover:text-primary transition-colors gap-2"
+                  className="text-sm font-display flex items-center hover:text-primary transition-colors gap-2"
                 >
                   CODE <Github className="size-3" />
                 </Link>
@@ -332,7 +332,7 @@ export default function Home() {
       >
         <div className="grid md:grid-cols-12 gap-12">
           <div className="md:col-span-4">
-            <h2 className="text-4xl font-bold tracking-tighter mb-6">
+            <h2 className="text-4xl font-display tracking-tighter mb-6">
               TECH_STACK
             </h2>
             <p className="text-muted-foreground mb-8">
@@ -362,7 +362,7 @@ export default function Home() {
           <div className="md:col-span-8 grid sm:grid-cols-3 gap-8">
             {skills.map((skillGroup, idx) => (
               <div key={idx} className="space-y-6">
-                <h3 className="text-xl font-bold border-b border-primary/30 pb-2 inline-block">
+                <h3 className="text-xl font-display border-b border-primary/30 pb-2 inline-block">
                   {skillGroup.category}
                 </h3>
                 <ul className="space-y-3">
@@ -388,15 +388,13 @@ export default function Home() {
         id="blog"
         className="py-24 border-t border-border max-w-7xl mx-auto"
       >
-        <h2 className="text-4xl font-bold tracking-tighter mb-12 uppercase">
-          Transmissions
-        </h2>
+        <h2 className="text-4xl font-display mb-12 uppercase">Transmissions</h2>
 
         <div className="grid gap-8">
           {blogPosts.map((post, index) => (
             <Link href="#" key={index} className="group">
               <div className="grid gap-4 md:grid-cols-[1fr_auto] items-baseline justify-between mb-2">
-                <h3 className="text-2xl font-bold group-hover:text-primary transition-colors text-balance">
+                <h3 className="text-2xl font-display group-hover:text-primary transition-colors text-balance">
                   {post.title}
                 </h3>
                 <span className="font-mono text-xs text-muted-foreground whitespace-nowrap">
@@ -419,9 +417,7 @@ export default function Home() {
       <Container id="contact" className="py-24 bg-card border-t border-border">
         <div className="max-w-2xl justify-self-center">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold tracking-tighter mb-4">
-              INITIATE_CONTACT
-            </h2>
+            <h2 className="text-4xl font-display mb-4">INITIATE_CONTACT</h2>
             <p className="text-muted-foreground">
               Have a project in mind or just want to discuss the singularity?
               Send a signal.

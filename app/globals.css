@@ -4,8 +4,10 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --font-sans: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
   --font-display-family: var(--font-inter-tight);
-  --font-display-weight: 600;
+  --font-display-weight: 700;
   --font-display-tracking: var(--tracking-tighter);
   --font-body-family: var(--font-sans);
   --font-body-weight: 400;
@@ -46,8 +48,6 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-  --font-sans: "Space Grotesk", "Inter", sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
   --m: --spacing(4);
   --g: --spacing(4);
   --safe-area-left: max(var(--m), env(safe-area-inset-left));

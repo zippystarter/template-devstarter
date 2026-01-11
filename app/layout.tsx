@@ -37,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth shadcn dark">
       <body
-        className={`${spaceGrotesk.variable} ${jetBrainsMono.variable} font-body antialiased`}
+        className={`font-body antialiased ${spaceGrotesk.variable} ${jetBrainsMono.variable}`}
       >
         <ThemeMessageListener />
         {children}
