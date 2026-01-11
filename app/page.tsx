@@ -384,44 +384,45 @@ export default function Home() {
         </div>
       </Container>
       {/* Blog Section */}
-      <Container id="blog" className="py-24 border-t border-border">
-        <div className="container mx-auto">
-          <h2 className="text-4xl font-bold tracking-tighter mb-12 lg:text-center uppercase">
-            Transmissions
-          </h2>
+      <Container
+        id="blog"
+        className="py-24 border-t border-border max-w-7xl mx-auto"
+      >
+        <h2 className="text-4xl font-bold tracking-tighter mb-12 lg:text-center uppercase">
+          Transmissions
+        </h2>
 
-          <div className="space-y-8 max-w-7xl mx-auto">
-            {blogPosts.map((post, index) => (
-              <Link href="#" key={index} className="group">
-                <div className="grid gap-4 items-baseline justify-between mb-2">
-                  <h3 className="text-2xl font-bold group-hover:text-primary transition-colors text-balance">
-                    {post.title}
-                  </h3>
-                  <span className="font-mono text-xs text-muted-foreground whitespace-nowrap">
-                    {post.date} / {post.readTime}
-                  </span>
-                </div>
-                <p className="text-muted-foreground mb-4 max-w-2xl">
-                  {post.excerpt}
-                </p>
-                <div className="h-[1px] w-full bg-border group-hover:bg-primary/50 transition-colors"></div>
-              </Link>
-            ))}
-          </div>
+        <div className="grid gap-8">
+          {blogPosts.map((post, index) => (
+            <Link href="#" key={index} className="group">
+              <div className="grid gap-4 items-baseline justify-between mb-2">
+                <h3 className="text-2xl font-bold group-hover:text-primary transition-colors text-balance">
+                  {post.title}
+                </h3>
+                <span className="font-mono text-xs text-muted-foreground whitespace-nowrap">
+                  {post.date} / {post.readTime}
+                </span>
+              </div>
+              <p className="text-muted-foreground mb-4 max-w-2xl">
+                {post.excerpt}
+              </p>
+              <div className="h-[1px] w-full bg-border group-hover:bg-primary/50 transition-colors"></div>
+            </Link>
+          ))}
+        </div>
 
-          <div className="text-center mt-12">
-            <Button
-              variant="outline"
-              className="rounded-none border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-            >
-              READ ALL LOGS
-            </Button>
-          </div>
+        <div className="text-center mt-12">
+          <Button
+            variant="outline"
+            className="rounded-none border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+          >
+            READ ALL LOGS
+          </Button>
         </div>
       </Container>
       {/* Contact Section */}
       <Container id="contact" className="py-24 bg-card border-t border-border">
-        <div className="container mx-auto max-w-2xl">
+        <div className="max-w-2xl justify-self-center">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold tracking-tighter mb-4">
               INITIATE_CONTACT
@@ -432,7 +433,7 @@ export default function Home() {
             </p>
           </div>
 
-          <form className="space-y-6">
+          <form className="grid gap-6">
             <div className="grid md:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <label
@@ -441,11 +442,7 @@ export default function Home() {
                 >
                   NAME
                 </label>
-                <Input
-                  id="name"
-                  placeholder="John Doe"
-                  className="rounded-none bg-background border-border focus:border-primary"
-                />
+                <Input id="name" placeholder="John Doe" />
               </div>
               <div className="space-y-2">
                 <label
@@ -454,12 +451,7 @@ export default function Home() {
                 >
                   EMAIL
                 </label>
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="john@example.com"
-                  className="rounded-none bg-background border-border focus:border-primary"
-                />
+                <Input id="email" type="email" placeholder="john@example.com" />
               </div>
             </div>
             <div className="space-y-2">
@@ -472,20 +464,20 @@ export default function Home() {
               <Textarea
                 id="message"
                 placeholder="Enter your message..."
-                className="min-h-[150px] rounded-none bg-background border-border focus:border-primary"
+                className="min-h-[150px]"
               />
             </div>
-            <Button
-              type="submit"
-              className="w-full rounded-none bg-primary text-primary-foreground hover:bg-primary/90 font-bold py-6"
-            >
+            <Button type="submit" className="w-full" size="lg">
               SEND TRANSMISSION
             </Button>
           </form>
         </div>
       </Container>
       {/* Footer */}
-      <footer className="py-8 border-t border-border bg-background text-center">
+      <Container
+        component="footer"
+        className="py-8 border-t border-border bg-background text-center"
+      >
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-xs font-mono text-muted-foreground">
@@ -504,7 +496,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </footer>
+      </Container>
     </div>
   );
 }
