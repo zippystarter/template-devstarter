@@ -23,6 +23,7 @@ import {
 } from "lucide-react";
 import { Container } from "@/components/zippystarter/container";
 import Link from "next/link";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 export default function Home() {
@@ -273,10 +274,11 @@ export default function Home() {
               className="pt-0 group bg-card border-border hover:border-primary/50 transition-all duration-300 rounded-none overflow-hidden grid grid-rows-subgrid row-span-3 content-start items-start"
             >
               <div className="image-container relative aspect-square overflow-hidden border-b border-border">
-                <img
+                <Image
                   src={project.image}
                   alt={project.title}
-                  className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500 grayscale"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500 grayscale"
                 />
                 <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
@@ -328,58 +330,56 @@ export default function Home() {
         wrapperClassName="py-24 bg-secondary/20 border-t border-border"
         className="mx-auto max-w-7xl flex-1"
       >
-        <div className="container mx-auto">
-          <div className="grid md:grid-cols-12 gap-12">
-            <div className="md:col-span-4">
-              <h2 className="text-4xl font-bold tracking-tighter mb-6">
-                TECH_STACK
-              </h2>
-              <p className="text-muted-foreground mb-8">
-                My preferred weapons of choice for building digital products.
-                Always learning, always evolving.
-              </p>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="p-4 border border-border bg-background flex flex-col items-center justify-center aspect-square hover:border-primary transition-colors">
-                  <Code2 className="h-8 w-8 mb-2 text-primary" />
-                  <span className="font-mono text-xs">CLEAN_CODE</span>
-                </div>
-                <div className="p-4 border border-border bg-background flex flex-col items-center justify-center aspect-square hover:border-primary transition-colors">
-                  <Database className="h-8 w-8 mb-2 text-primary" />
-                  <span className="font-mono text-xs">SCALABLE_DB</span>
-                </div>
-                <div className="p-4 border border-border bg-background flex flex-col items-center justify-center aspect-square hover:border-primary transition-colors">
-                  <Cpu className="h-8 w-8 mb-2 text-primary" />
-                  <span className="font-mono text-xs">PERFORMANCE</span>
-                </div>
-                <div className="p-4 border border-border bg-background flex flex-col items-center justify-center aspect-square hover:border-primary transition-colors">
-                  <Terminal className="h-8 w-8 mb-2 text-primary" />
-                  <span className="font-mono text-xs">DEVOPS</span>
-                </div>
+        <div className="grid md:grid-cols-12 gap-12">
+          <div className="md:col-span-4">
+            <h2 className="text-4xl font-bold tracking-tighter mb-6">
+              TECH_STACK
+            </h2>
+            <p className="text-muted-foreground mb-8">
+              My preferred weapons of choice for building digital products.
+              Always learning, always evolving.
+            </p>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="p-4 border border-border bg-background flex flex-col items-center justify-center aspect-square hover:border-primary transition-colors">
+                <Code2 className="h-8 w-8 mb-2 text-primary" />
+                <span className="font-mono text-xs">CLEAN_CODE</span>
+              </div>
+              <div className="p-4 border border-border bg-background flex flex-col items-center justify-center aspect-square hover:border-primary transition-colors">
+                <Database className="h-8 w-8 mb-2 text-primary" />
+                <span className="font-mono text-xs">SCALABLE_DB</span>
+              </div>
+              <div className="p-4 border border-border bg-background flex flex-col items-center justify-center aspect-square hover:border-primary transition-colors">
+                <Cpu className="h-8 w-8 mb-2 text-primary" />
+                <span className="font-mono text-xs">PERFORMANCE</span>
+              </div>
+              <div className="p-4 border border-border bg-background flex flex-col items-center justify-center aspect-square hover:border-primary transition-colors">
+                <Terminal className="h-8 w-8 mb-2 text-primary" />
+                <span className="font-mono text-xs">DEVOPS</span>
               </div>
             </div>
+          </div>
 
-            <div className="md:col-span-8 grid md:grid-cols-3 gap-8">
-              {skills.map((skillGroup, idx) => (
-                <div key={idx} className="space-y-6">
-                  <h3 className="text-xl font-bold border-b border-primary/30 pb-2 inline-block">
-                    {skillGroup.category}
-                  </h3>
-                  <ul className="space-y-3">
-                    {skillGroup.items.map((skill, sIdx) => (
-                      <li
-                        key={sIdx}
-                        className="flex items-center justify-between group"
-                      >
-                        <span className="font-mono text-sm text-muted-foreground group-hover:text-foreground transition-colors">
-                          {skill}
-                        </span>
-                        <div className="h-[2px] w-12 bg-secondary group-hover:bg-primary transition-colors"></div>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
+          <div className="md:col-span-8 grid md:grid-cols-3 gap-8">
+            {skills.map((skillGroup, idx) => (
+              <div key={idx} className="space-y-6">
+                <h3 className="text-xl font-bold border-b border-primary/30 pb-2 inline-block">
+                  {skillGroup.category}
+                </h3>
+                <ul className="space-y-3">
+                  {skillGroup.items.map((skill, sIdx) => (
+                    <li
+                      key={sIdx}
+                      className="flex items-center justify-between group"
+                    >
+                      <span className="font-mono text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+                        {skill}
+                      </span>
+                      <div className="h-[2px] w-12 bg-secondary group-hover:bg-primary transition-colors"></div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
       </Container>
