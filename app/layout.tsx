@@ -12,10 +12,20 @@ const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
 });
 
+const title = "Dev One by Zippystarter";
+const description =
+  "Dev One is an Open Source, one page developer portfolio template.";
+
 export const metadata: Metadata = {
-  title: "Dev One by Zippystarter",
-  description:
-    "Dev One is an Open Source, one page developer portfolio template.",
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+    url: "./",
+    siteName: title,
+    images: "/og.jpg",
+  },
 };
 
 export default function RootLayout({
