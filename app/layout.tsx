@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/providers/theme-provider";
-import { Space_Grotesk, JetBrains_Mono, Space_Mono } from "next/font/google";
+import { Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import { ThemeMessageListener } from "@zippy/shared-utils";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -14,11 +13,19 @@ const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
 });
 
-const title = "Dev One by Zippystarter";
+const siteUrl =
+  process.env.VERCEL_ENV === "preview"
+    ? `https://${process.env.VERCEL_BRANCH_URL}`
+    : process.env.VERCEL_PROJECT_PRODUCTION_URL
+      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+      : "http://localhost:3000";
+
+const title = "Dev Starter by Zippystarter";
 const description =
-  "Dev One is an Open Source, one page developer portfolio template.";
+  "Dev Starter is an open source, one page developer portfolio template.";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title,
   description,
   openGraph: {
@@ -41,7 +48,6 @@ export default function RootLayout({
         className={`font-body antialiased ${spaceGrotesk.variable} ${jetBrainsMono.variable}`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <ThemeMessageListener />
           {children}
         </ThemeProvider>
       </body>
