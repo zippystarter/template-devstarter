@@ -46,16 +46,9 @@
     --safe-area-right: max(var(--m), env(safe-area-inset-right));
 }
 
-/*
-  Design Concept: The Neon Void
-  - Matte Black (#0f0f11)
-  - Acid Green (#ccff00)
-  - Slate Concrete (#334155)
-*/
-
 :root {
-    --primary: oklch(0.88 0.2 120); /* Acid Green */
-    --primary-foreground: oklch(0.1 0.02 286); /* Dark Black */
+    --primary: oklch(0.88 0.2 120);
+    --primary-foreground: oklch(0.1 0.02 286);
     --sidebar-primary: oklch(0.2 0.02 286);
     --sidebar-primary-foreground: oklch(0.98 0 0);
     --chart-1: oklch(0.88 0.2 120);
@@ -63,19 +56,19 @@
     --chart-3: oklch(0.6 0.1 120);
     --chart-4: oklch(0.5 0.05 120);
     --chart-5: oklch(0.4 0.02 120);
-    --radius: 0.5rem; /* Sharp corners for Swiss style */
-    --background: oklch(0.1 0.01 286); /* Matte Black */
-    --foreground: oklch(0.98 0 0); /* White */
+    --radius: 0.5rem;
+    --background: oklch(0.1 0.01 286);
+    --foreground: oklch(0.98 0 0);
     --card: oklch(0.12 0.01 286);
     --card-foreground: oklch(0.98 0 0);
     --popover: oklch(0.12 0.01 286);
     --popover-foreground: oklch(0.98 0 0);
-    --secondary: oklch(0.2 0.02 286); /* Slate Concrete */
+    --secondary: oklch(0.2 0.02 286);
     --secondary-foreground: oklch(0.98 0 0);
     --muted: oklch(0.2 0.02 286);
     --muted-foreground: oklch(0.6 0.01 286);
-    --accent: oklch(0.88 0.2 120); /* Acid Green */
-    --accent-foreground: oklch(0.1 0.02 286);
+    --accent: oklch(0.25 0.02 286);
+    --accent-foreground: oklch(0.88 0.2 120);
     --destructive: oklch(0.6 0.2 20);
     --destructive-foreground: oklch(0.98 0 0);
     --border: oklch(0.25 0.02 286);
@@ -110,7 +103,7 @@
     padding-right: var(--safe-area-right);
 }
 
-.image-container {
+@utility image-container {
     position: relative;
     background: var(--primary);
 

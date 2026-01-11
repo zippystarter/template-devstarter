@@ -359,7 +359,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="md:col-span-8 grid md:grid-cols-3 gap-8">
+          <div className="md:col-span-8 grid sm:grid-cols-3 gap-8">
             {skills.map((skillGroup, idx) => (
               <div key={idx} className="space-y-6">
                 <h3 className="text-xl font-bold border-b border-primary/30 pb-2 inline-block">
@@ -388,19 +388,19 @@ export default function Home() {
         id="blog"
         className="py-24 border-t border-border max-w-7xl mx-auto"
       >
-        <h2 className="text-4xl font-bold tracking-tighter mb-12 lg:text-center uppercase">
+        <h2 className="text-4xl font-bold tracking-tighter mb-12 uppercase">
           Transmissions
         </h2>
 
         <div className="grid gap-8">
           {blogPosts.map((post, index) => (
             <Link href="#" key={index} className="group">
-              <div className="grid gap-4 items-baseline justify-between mb-2">
+              <div className="grid gap-4 md:grid-cols-[1fr_auto] items-baseline justify-between mb-2">
                 <h3 className="text-2xl font-bold group-hover:text-primary transition-colors text-balance">
                   {post.title}
                 </h3>
                 <span className="font-mono text-xs text-muted-foreground whitespace-nowrap">
-                  {post.date} / {post.readTime}
+                  {post.date} // {post.readTime}
                 </span>
               </div>
               <p className="text-muted-foreground mb-4 max-w-2xl">
@@ -412,12 +412,7 @@ export default function Home() {
         </div>
 
         <div className="text-center mt-12">
-          <Button
-            variant="outline"
-            className="rounded-none border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-          >
-            READ ALL LOGS
-          </Button>
+          <Button variant="outline">VIEW ALL POSTS</Button>
         </div>
       </Container>
       {/* Contact Section */}
