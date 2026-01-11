@@ -103,12 +103,13 @@
     padding-right: var(--safe-area-right);
 }
 
-@utility image-container {
-    position: relative;
-    background: var(--primary);
+@layer components {
+    .image-container {
+        position: relative;
+        background: var(--primary);
 
-    & img {
-        mix-blend-mode: darken;
+        & img {
+            mix-blend-mode: darken;
+        }
     }
 }
-
