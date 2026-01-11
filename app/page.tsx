@@ -143,7 +143,7 @@ export default function Home() {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <div className="relative w-[100vw] h-[100vh] bg-background overflow-hidden">
-            <div className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-[url('/hero-bg.jpg')] before:absolute before:inset-0 before:bg-primary before:mix-blend-color" />
+            <div className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-[url('/hero-bg.jpg')] before:absolute before:inset-0 before:bg-primary before:mix-blend-color-dodge dark:before:mix-blend-color" />
           </div>
           <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/50 to-background" />
         </div>
@@ -162,7 +162,7 @@ export default function Home() {
               <br />
               STACK
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-white">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-foreground">
                 DEV_
               </span>
             </h1>
@@ -209,10 +209,10 @@ export default function Home() {
 
           {/* Decorative Abstract Element */}
           <div className="hidden md:block relative h-[500px] w-full border border-border/30 bg-card/10 backdrop-blur-sm p-8">
-            <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-primary"></div>
-            <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-primary"></div>
-            <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-primary"></div>
-            <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-primary"></div>
+            <div className="absolute top-0 left-0 size-4 border-t-2 border-l-2 border-primary"></div>
+            <div className="absolute top-0 right-0 size-4 border-t-2 border-r-2 border-primary"></div>
+            <div className="absolute bottom-0 left-0 size-4 border-b-2 border-l-2 border-primary"></div>
+            <div className="absolute bottom-0 right-0 size-4 border-b-2 border-r-2 border-primary"></div>
 
             <div className="h-full w-full flex flex-col justify-between font-mono text-xs text-muted-foreground">
               <div className="flex justify-between">
@@ -467,24 +467,22 @@ export default function Home() {
       {/* Footer */}
       <Container
         component="footer"
-        className="py-8 border-t border-border bg-background text-center"
+        className="py-8 border-t border-border bg-background text-center max-w-7xl mx-auto"
       >
-        <div className="container mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="text-xs font-mono text-muted-foreground">
-              © 2025 MARCUS CHEN. ALL RIGHTS RESERVED.
-            </div>
-            <div className="flex gap-6 text-xs font-mono text-muted-foreground">
-              <Link href="#" className="hover:text-primary transition-colors">
-                GITHUB
-              </Link>
-              <Link href="#" className="hover:text-primary transition-colors">
-                LINKEDIN
-              </Link>
-              <Link href="#" className="hover:text-primary transition-colors">
-                TWITTER
-              </Link>
-            </div>
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="text-xs font-mono text-muted-foreground">
+            © 2025 MARCUS CHEN. ALL RIGHTS RESERVED.
+          </div>
+          <div className="flex gap-6 text-xs font-mono text-muted-foreground">
+            <Link href="#" className="hover:text-primary transition-colors">
+              GITHUB
+            </Link>
+            <Link href="#" className="hover:text-primary transition-colors">
+              LINKEDIN
+            </Link>
+            <Link href="#" className="hover:text-primary transition-colors">
+              TWITTER
+            </Link>
           </div>
         </div>
       </Container>

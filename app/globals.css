@@ -164,7 +164,11 @@
     background: var(--primary);
 
     & img {
+      mix-blend-mode: luminosity;
+
+      @variant dark {
         mix-blend-mode: darken;
+      }
     }
   }
 }
