@@ -23,8 +23,8 @@ import {
 } from "lucide-react";
 import { Container } from "@/components/zippystarter/container";
 import Link from "next/link";
-import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { ProjectImage } from "@/components/project-image";
 
 export default function Home() {
   const projects = [
@@ -273,15 +273,7 @@ export default function Home() {
               key={index}
               className="pt-0 group bg-card border-border hover:border-primary/50 transition-all duration-300 rounded-none overflow-hidden grid grid-rows-subgrid row-span-3 content-start items-start"
             >
-              <div className="image-container relative aspect-square overflow-hidden border-b border-border">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500 grayscale"
-                />
-                <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
+              <ProjectImage src={project.image} alt={project.title} />
               <div className="grid gap-4">
                 <CardHeader className="grid gap-4">
                   <CardTitle className="text-2xl font-display group-hover:text-primary transition-colors">

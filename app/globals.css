@@ -157,18 +157,3 @@
   font-weight: var(--font-body-weight);
   letter-spacing: var(--font-body-tracking);
 }
-
-@layer components {
-  .image-container {
-    position: relative;
-    background: var(--primary);
-
-    & img {
-      mix-blend-mode: luminosity;
-
-      @variant dark {
-        mix-blend-mode: darken;
-      }
-    }
-  }
-}
