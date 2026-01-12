@@ -4,10 +4,16 @@ Devstarter is one-page developer portfolio template
 from [Zippystarter](https://zippystarter.com). It's built
 with [Next.js](https://nextjs.org) and [shadcn](https://ui.shadcn.com).
 
-It's fully compatible with shadcn's theming system. To see the template in action and change the theme, head on over to
-the [shadcn theme generator](https://zippystarter.com/tools/shadcn-ui-theme-generator/demo/dev-one?utm_source=https://github.com/zippystarter/template-devone).
+This [shadcn template](https://zippystarter.com/templates/devstarter) is fully
+compatible with shadcn's theming system.
 
-[devstarter](public/og.jpg)
+To experiment with [shadcn themes](https://zippystarter.com/themes), head on
+over to
+the [shadcn theme generator](https://zippystarter.com/tools/shadcn-ui-theme-generator/demo/dev-one?utm_source=https://github.com/zippystarter/template-devone)
+where you'll be able to apply themes to the template and export them for your
+own use.
+
+![devstarter](public/og.jpg)
 
 ## Getting Started
 
@@ -29,7 +35,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Notes
 
-This template makes use of modern CSS features such as CSS Grid & Subgrid.
+This template makes use of modern CSS features such as CSS Grid & Subgrid &
+mix-blend-mode.
 
 ## Learn More
 
