@@ -1,10 +1,13 @@
-# Dev Starter - by Zippystarter
+# Devstarter - by Zippystarter
 
-Dev One is one-page developer portfolio template from [Zippystarter](https://zippystarter.com). It's built
+Devstarter is one-page developer portfolio template
+from [Zippystarter](https://zippystarter.com). It's built
 with [Next.js](https://nextjs.org) and [shadcn](https://ui.shadcn.com).
 
 It's fully compatible with shadcn's theming system. To see the template in action and change the theme, head on over to
 the [shadcn theme generator](https://zippystarter.com/tools/shadcn-ui-theme-generator/demo/dev-one?utm_source=https://github.com/zippystarter/template-devone).
+
+[devstarter](public/og.jpg)
 
 ## Getting Started
 
